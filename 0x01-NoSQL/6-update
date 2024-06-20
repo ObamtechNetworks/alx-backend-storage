@@ -1,0 +1,5 @@
+// add new attribute to a doc in the collection school
+db.school.updateOne(
+  {"name": "Holberton school"},
+  {"$set": { "Address": "972 Mission street"} }
+)
