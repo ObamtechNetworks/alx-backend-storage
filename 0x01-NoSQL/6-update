@@ -1,6 +1,7 @@
-// Update all documents with name="Holberton school" by adding the address attribute
-var result = db.school.updateMany(
-    { name: "Holberton school" },  // Filter criteria
-    { $set: { address: "972 Mission street" } }  // Update operation
+// Update all documents with name="Holberton school" by adding the address attributes
+db.school.update(
+  { name: "Holberton school" },  // Filter criteria
+  { $set: { address: "972 Mission street" } },  // Update operation
+  { multi: true }  // Update multiple documents
 );
-printjson(result);
+
