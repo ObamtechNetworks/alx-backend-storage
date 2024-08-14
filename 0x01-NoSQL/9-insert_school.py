@@ -7,6 +7,5 @@ def insert_school(mongo_collection, **kwargs):
 
     result = mongo_collection.insert_one({**kwargs})
     if result:
-        for item in result:
-            return item.get('_id')
-    return []
+        return result.inserted_id
+    return None
