@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update mongodb via python"""
+"""Update MongoDB via Python"""
 
 
 def update_topics(mongo_collection, name, topics):
@@ -14,10 +14,11 @@ def update_topics(mongo_collection, name, topics):
     # Filter to find the document with the given name
     filter_query = {"name": name}
 
-    if filter_query:
-        # Update operation to set the topics field
-        update_operation = {"$set": {"topics": topics}}
-        # Perform the update
-        result = mongo_collection.update_one(filter_query, update_operation)
-        return result
-    return ""
+    # Update operation to set the topics field
+    update_operation = {"$set": {"topics": topics}}
+
+    # Perform the update (update_one updates only the first matching document)
+    result = mongo_collection.update_one(filter_query, update_operation)
+
+    # Optionally, return the result if needed
+    return result
