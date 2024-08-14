@@ -30,3 +30,6 @@ def log_stats():
     status_check_count = collection.count_documents(
         {"method": "GET", "path": "/status"})
     print(f"{status_check_count} status check")
+
+
+log_stats()
