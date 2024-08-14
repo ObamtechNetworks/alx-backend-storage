@@ -15,7 +15,7 @@ def update_topics(mongo_collection, name, topics):
     filter_query = {"name": name}
 
     # Update operation to set the topics field
-    update_operation = {"$set": {"topics": {topics}}}
+    update_operation = {"$set": {"topics": topics}}
 
     # Perform the update (update_one updates only the first matching document)
     result = mongo_collection.update_one(filter_query, update_operation)
