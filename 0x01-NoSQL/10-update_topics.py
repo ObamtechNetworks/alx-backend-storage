@@ -17,6 +17,7 @@ def update_topics(mongo_collection, name, topics):
     if filter_query:
         # Update operation to set the topics field
         update_operation = {"$set": {"topics": topics}}
-
-        return update_operation
-    return None
+        # Perform the update
+        result = mongo_collection.update_one(filter_query, update_operation)
+        return result
+    return ""
