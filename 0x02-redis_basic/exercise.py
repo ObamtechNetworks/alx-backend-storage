@@ -25,5 +25,5 @@ class Cache:
             str: returns a string -> key of the data
         """
         key = str(uuid.uuid4())
-        self.__redis.set(key, data)
+        self._redis.set(key, data)
         return key
